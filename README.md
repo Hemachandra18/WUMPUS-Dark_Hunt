@@ -24,11 +24,14 @@ You explore a dark cave made of interconnected rooms. Your goal is to find the h
 - JavaScript
 
 ## 📁 Project Structure
-WUMPUS/
-├── index.html # Home / landing page
-├── game.html # Game interface
+
+```
+WUMPUS-Dark_Hunt/
+├── index.html        # Home / landing page
+├── game.html         # Game interface
 ├── css/
-│ └── style.css # Styling
+│   └── style.css     # Styling
 ├── js/
-│ └── game.js # Game logic
+│   └── game.js       # Game logic
 └── README.md
+```
