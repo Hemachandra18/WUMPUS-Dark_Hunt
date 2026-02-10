@@ -1,0 +1,422 @@
+/* HOME PAGE */
+
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #000000;
+    /* Black Background */
+    color: #E0E0E0;
+    /* Light Gray Text */
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Container */
+.container {
+    margin: 20px auto;
+    max-width: 500px;
+}
+
+/* Heading */
+h1 {
+    font-size: 36px;
+    color: #FFEB3B;
+    /* Bright Yellow */
+    margin-bottom: 10px;
+}
+
+/* Paragraph */
+p {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+/* Button Styles */
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #F44336;
+    /* Red Button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #C0392B;
+    /* Darker Red on Hover */
+}
+
+/* Rules Box */
+#rules-box {
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Black background with less transparency */
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 30px;
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+}
+
+/* Game Rules Heading */
+#rules-box h2 {
+    color: #FFEB3B;
+    /* Bright Yellow */
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* Rules list */
+#rules {
+    text-align: left;
+    font-size: 16px;
+    list-style-type: disc;
+    /* This gives the rules dot labels */
+    padding-left: 20px;
+    /* Indentation for the list */
+    color: #FFFFFF;
+    /* White text color */
+}
+
+#rules li {
+    margin: 10px 0;
+}
+
+
+
+/* GAME PAGE */
+
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #000000;
+    /* Black Background */
+    color: #E0E0E0;
+    /* Light Gray Text */
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Container */
+.container {
+    margin: 20px auto;
+    max-width: 500px;
+}
+
+/* Heading */
+h1 {
+    font-size: 36px;
+    color: #FFEB3B;
+    /* Bright Yellow */
+    margin-bottom: 10px;
+}
+
+/* Paragraph */
+p {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+/* Grid Layout */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin: 20px 0;
+    border: 2px solid #FFEB3B;
+    /* Bright Yellow Border */
+}
+
+/* Grid Tile */
+.tile {
+    width: 80px;
+    height: 80px;
+    background-color: #34495e;
+    /* Dark Gray */
+    font-size: 16px;
+    color: #E0E0E0;
+    /* Light Gray Text */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover Effects */
+.tile:hover {
+    background-color: #FFEB3B;
+    /* Bright Yellow */
+    transform: scale(1.05);
+}
+
+.tile.revealed {
+    background-color: #7f8c8d;
+    /* Lighter Gray */
+}
+
+.tile.trap {
+    background-color: #F44336;
+    /* Red Trap */
+    color: #fff;
+}
+
+.tile.treasure {
+    background-color: #FFEB3B;
+    /* Bright Yellow */
+    color: #000;
+}
+
+/* Button Styles */
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #F44336;
+    /* Red Button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #C0392B;
+    /* Darker Red on Hover */
+}
+
+/* Message Area */
+#message {
+    font-size: 20px;
+    margin-top: 20px;
+    color: #E0E0E0;
+    /* Light Gray Text */
+}
+
+#attempts {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Gold Falling Animation */
+#falling-gold {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.falling-gold {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #FFEB3B;
+    /* Bright Yellow */
+    font-size: 30px;
+    z-index: 1000;
+    pointer-events: none;
+    animation: goldFall 2s ease-out infinite;
+}
+
+@keyframes goldFall {
+    0% {
+        top: -30px;
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1.2);
+    }
+
+    100% {
+        top: 100vh;
+        opacity: 0;
+        transform: translateX(-50%) scale(0.8);
+    }
+}
+
+/* Breeze Animation */
+@keyframes breezeEffect {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+
+.breeze {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    font-size: 35px;
+    color: #FFEB3B;
+    /* Bright Yellow Breeze */
+    animation: breezeEffect 3s ease-out infinite;
+}
+
+.breeze::before {
+    content: "🍃";
+    /* Correct emoji for breeze */
+    position: absolute;
+    font-size: 45px;
+    top: 0;
+    left: 0;
+    animation: breezeEffect 3s ease-out infinite;
+}
+
+/* Restart Button Style */
+#restart {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #F44336;
+    /* Red Button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#restart:hover {
+    background-color: #C0392B;
+}
+
+
+/* Animate Breeze (🍃) */
+.animate-breeze {
+    position: absolute;
+    animation: breezeAnimation 3s ease-in-out forwards;
+}
+
+@keyframes breezeAnimation {
+    0% {
+        transform: translateX(0) translateY(0);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateX(50vw) translateY(-50px);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateX(100vw) translateY(-100px);
+        opacity: 0;
+    }
+}
+
+/* Animate Trap (🌪) */
+.animate-trap {
+    position: absolute;
+    animation: trapAnimation 3s linear forwards;
+}
+
+@keyframes trapAnimation {
+    0% {
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+
+    50% {
+        transform: rotate(180deg);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Animate Gold Smell (🪙) */
+.animate-gold-smell {
+    position: absolute;
+    animation: goldSmellAnimation 3s ease-in-out forwards;
+}
+
+@keyframes goldSmellAnimation {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(-30px);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateY(-60px);
+        opacity: 0;
+    }
+}
+
+/* Animate Treasure (🏆) */
+.falling-gold {
+    position: absolute;
+    animation: goldFallAnimation 2s ease-in-out forwards;
+}
+
+@keyframes goldFallAnimation {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-10px);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+
+    75% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+body.shake {
+    animation: shake 1s ease-out;
+}
