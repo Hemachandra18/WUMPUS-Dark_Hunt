@@ -26,7 +26,7 @@ You explore a dark cave made of interconnected rooms. Your goal is to find the h
 ## 📁 Project Structure
 
 ```
-WUMPUS-Dark_Hunt/
+WUMPUS/
 ├── index.html        # Home / landing page
 ├── game.html         # Game interface
 ├── css/
